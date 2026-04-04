@@ -1,0 +1,55 @@
+Plan 60 jours — Java Spring Boot + Angular
+
+S1 — Java Core (semaine 1) ✅
+
+Classes, encapsulation, constructeurs
+Héritage, polymorphisme (extends, super, @Override)
+Interfaces (implements, couplage faible)
+Collections (List, Map)
+Exceptions (try-catch, custom exceptions)
+static, final, abstract
+Mini-projet : CLI Registre de composants aéronautiques
+S2 — Spring Boot basics (semaine 2)
+
+Qu'est-ce que Spring / IoC / injection de dépendances
+Créer un projet Spring Boot (Spring Initializr)
+@RestController, @GetMapping, @PostMapping
+Tester avec Postman ou curl
+Mini-projet : API REST "Registre de composants" (CRUD en mémoire)
+S3 — Spring Boot + base de données (semaine 3)
+
+JPA / Hibernate, @Entity, @Repository
+Spring Data JPA (findAll, findById, save, delete)
+H2 en dev, PostgreSQL en prod
+Mini-projet : persister le registre en base
+S4 — Spring Boot avancé (semaine 4)
+
+@Service, architecture en couches (Controller → Service → Repository)
+Validation (@Valid, @NotNull, @Size)
+Gestion d'erreurs globale (@ControllerAdvice)
+Mini-projet : API complète avec validation et erreurs propres
+S5 — TypeScript + Angular bases (semaine 5)
+
+TypeScript : types, interfaces, classes (analogies Java)
+Angular : composants, templates, binding ({{ }}, [property], (event))
+*ngIf, *ngFor
+Mini-projet : liste de composants en Angular (données statiques)
+S6 — Angular + HTTP (semaine 6)
+
+HttpClient, appels vers ton API Spring Boot
+Services Angular, injection de dépendances (même concept qu'en Java)
+Routing (RouterModule, navigation entre pages)
+Mini-projet : frontend Angular connecté à l'API Spring Boot
+S7 — Intégration + sécurité (semaine 7)
+
+CORS entre Spring Boot et Angular
+Spring Security basics (authentification simple)
+Variables d'environnement, profils Spring (dev/prod)
+Mini-projet : application full-stack sécurisée
+S8 — Consolidation + projet final (semaine 8)
+
+Révision des points faibles
+Projet final : application full-stack type Aeroline
+Backend Spring Boot (API REST, JPA, sécurité)
+Frontend Angular (liste, formulaires, navigation)
+Préparer des réponses aux questions techniques d'entretien
