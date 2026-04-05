@@ -52,10 +52,15 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Classe générique `Pair<A, B>` avec attributs, constructeur, getters
 - Bounded generic `<T extends Component>` : `findHeaviest(List<T> list)`
 
+#### J4 — 05/04/2026
+- Lambdas : syntaxe `x -> operation`, passage en argument
+- Streams : `filter`, `map`, `forEach`, `sorted`, `reduce`, `toList()`
+- Method references : `Classe::méthode`
+- Exercices sur `List<Integer>`, `List<String>` et objets `MechanicalComponent`
+
 ---
 
 ### À venir
 
-- **J4** — Lambdas + Streams
 - **J5** — Mini-exercice combiné (Generics + Streams)
 - **J6/J7** — Spring Boot (S2)
