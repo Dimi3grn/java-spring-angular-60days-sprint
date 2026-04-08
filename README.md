@@ -58,9 +58,25 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Method references : `Classe::méthode`
 - Exercices sur `List<Integer>`, `List<String>` et objets `MechanicalComponent`
 
+#### J5 — 07/04/2026
+- Interface `Nameable` comme contrat générique
+- `GenericRegistry<T extends Nameable>` : registre générique réutilisable
+- `NotFoundException` découplée du domaine
+- Streams sur `GenericRegistry` via `getAll()` + `map` + `forEach`
+
+#### J6 — 08/04/2026
+> Journée chargée — boulot étudiant jusqu'à 1h du mat, session de code après. 4h du mat quand j'ai posé le clavier. Pas grand chose de fait, mais présent quand même.
+- Setup projet Spring Boot via start.spring.io, extraction dans `/sb/demo`
+- Lancement `./mvnw spring-boot:run` → Tomcat démarré sur port 8080
+- Compréhension de l'IoC : Spring prend le contrôle à la place du développeur
+- `@SpringBootApplication` = `@SpringBootConfiguration` + `@EnableAutoConfiguration` + `@ComponentScan`
+- Création de `ComponentController` : premier endpoint `GET /components` → retourne `List<String>` en JSON
+- Compréhension de `@RestController`, `@RequestMapping`, `@GetMapping`
+- Deuxième endpoint `GET /components/{name}` avec `@PathVariable`
+- Constat : la liste est hardcodée, les deux méthodes ne la partagent pas → à résoudre J7
+
 ---
 
 ### À venir
 
-- **J5** — Mini-exercice combiné (Generics + Streams)
-- **J6/J7** — Spring Boot (S2)
+- **J7** — Spring Boot : liste partagée, gestion d'erreurs (404), `@Service`, architecture en couches
