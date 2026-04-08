@@ -75,8 +75,19 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Deuxième endpoint `GET /components/{name}` avec `@PathVariable`
 - Constat : la liste est hardcodée, les deux méthodes ne la partagent pas → à résoudre J7
 
+#### J7 — 08/04/2026
+- CRUD complet en mémoire : `GET`, `POST`, `PUT`, `DELETE` sur `/components`
+- Liste partagée entre méthodes via attribut de classe (`ArrayList`)
+- Gestion 404 avec `ResponseStatusException` + `HttpStatus.NOT_FOUND`
+- Comparaison insensible à la casse avec `toLowerCase()`
+- Architecture en couches : extraction de la logique vers `ComponentService` (`@Service`)
+- Injection de dépendances avec `@Autowired`
+- Extraction des données vers `ComponentRepository` (`@Repository`)
+- Compréhension du flux : `Controller → Service → Repository`
+- Hot reload activé via `spring-boot-devtools`
+
 ---
 
 ### À venir
 
-- **J7** — Spring Boot : liste partagée, gestion d'erreurs (404), `@Service`, architecture en couches
+- **J8** — Spring Boot S3 : JPA, `@Entity`, `@Repository` Spring Data, H2 en dev

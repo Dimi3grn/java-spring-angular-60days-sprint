@@ -1,33 +1,52 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.ComponentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @RequestMapping("/components")
 public class ComponentController {
+    @Autowired
+    private ComponentService componentService;
+
+    // J7 - EXERCICE 1 : liste partagée entre toutes les méthodes
+    // Problème actuel : getComponents() et getComponent() n'ont pas accès à la même liste
+    // Solution : déclarer la liste comme attribut de la classe
+    // Indice : ArrayList est modifiable (List.of est figée)
+
+
 
     @GetMapping
     public List<String> getComponents() {
-        return List.of("Rotor", "Capteur gyroscopique", "Train d'atterrissage");
+        return componentService.getAll();
     }
-
-    // EXERCICE 2 : endpoint GET /components/{name}
-    // → retourne une String : "Composant : {name}"
-    // Indice 1 : l'annotation sur la méthode prend un paramètre : @GetMapping("/{name}")
-    // Indice 2 : pour récupérer {name} depuis l'URL, utilise @PathVariable avant le paramètre
-    // Indice 3 : la signature ressemble à → public String getComponent(@___ String name)
 
     @GetMapping("/{name}")
     public String getComponent(@PathVariable String name) {
-        return "composant : " + name;
+        return componentService.getByName(name);
     }
 
-    // ___ ("/___")
-    // public ___ ___(@___ String name) {
-    //     return "Composant : " + ___;
-    // }
+    // J7 - EXERCICE 3 : POST /components → ajouter un composant
+    // Le client envoie un texte brut dans le corps de la requête (ex: "Altimètre")
+    // La méthode l'ajoute à la liste et retourne la liste mise à jour
+    // Indice Spring : @PostMapping sur la méthode, @RequestBody sur le paramètre
+
+    @PostMapping()
+    public void addComponent(@RequestBody String name) {
+        componentService.add(name);
+    }
+
+    @DeleteMapping("/{name}")
+    public void removeComponent(@PathVariable String name){
+        componentService.remove(name);
+    }
+
+    @PutMapping("/{name}")
+    public void renameComponent(@PathVariable String name, @RequestBody String newName){
+        componentService.rename(name, newName);
+    }
+
 }
