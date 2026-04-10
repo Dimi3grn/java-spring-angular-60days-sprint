@@ -1,0 +1,68 @@
+Plan détaillé — Java Spring Boot + Angular (60 jours)
+
+S1 — Java Core (semaine 1) ✅
+  J1  (02/04) — Setup IntelliJ + JDK 21, révision OOP, début mini-projet
+  J2  (03/04) — Mini-projet S1 complet (héritage, interfaces, collections, exceptions)
+  J3  (04/04) — Generics : méthodes et classes génériques, bounded generics
+  J4  (05/04) — Lambdas, Streams, method references
+  J5  (07/04) — Interface Nameable, GenericRegistry<T>, NotFoundException
+  J6  (08/04) — [libre / révision]
+  J7  (09/04) — [libre / révision]
+
+S2 — Spring Boot basics (semaine 2) ✅
+  J6  (08/04) — Setup Spring Boot, IoC, @SpringBootApplication, premier endpoint REST
+  J7  (08/04) — CRUD complet en mémoire, architecture Controller→Service→Repository, @Autowired
+
+S3 — Spring Boot + base de données (semaine 3)
+  J8  (10/04) ✅ — JPA, @Entity, @Id, @GeneratedValue, H2, Spring Data JpaRepository
+  J9  (11/04) — PostgreSQL en prod, application.properties, profils dev/prod
+  J10 (12/04) — findById, Optional, gestion des null (404 propre)
+  J11 (13/04) — Requêtes custom avec @Query
+  J12 (14/04) — Contraintes sur l'entité (@Column, @NotNull JPA)
+  J13 (15/04) — Mini-projet S3 : registre de composants persisté en base
+  J14 (16/04) — Révision / consolidation S3
+
+S4 — Spring Boot avancé (semaine 4)
+  J15 (17/04) — @Valid, @NotNull, @Size — validation des requêtes entrantes
+  J16 (18/04) — @ControllerAdvice — gestion globale des erreurs HTTP
+  J17 (19/04) — DTOs (Data Transfer Objects) — séparer l'entité de ce qu'on expose
+  J18 (20/04) — Profils Spring (dev/prod), variables d'environnement
+  J19 (21/04) — Mini-projet S4 : API complète avec validation et erreurs propres
+  J20 (22/04) — Révision / consolidation S4
+  J21 (23/04) — [libre / avance]
+
+S5 — TypeScript + Angular bases (semaine 5)
+  J22 (24/04) — TypeScript : types, interfaces, classes (analogies Java)
+  J23 (25/04) — Angular : composants, templates, binding ({{ }}, [property], (event))
+  J24 (26/04) — *ngIf, *ngFor, pipes
+  J25 (27/04) — Services Angular, injection de dépendances
+  J26 (28/04) — Mini-projet S5 : liste de composants en Angular (données statiques)
+  J27 (29/04) — Révision / consolidation S5
+  J28 (30/04) — [libre / avance]
+
+S6 — Angular + HTTP (semaine 6)
+  J29 (01/05) — HttpClient, appels vers l'API Spring Boot
+  J30 (02/05) — Gestion des erreurs HTTP côté Angular
+  J31 (03/05) — Routing : RouterModule, navigation entre pages
+  J32 (04/05) — Formulaires Angular (ReactiveFormsModule)
+  J33 (05/05) — Mini-projet S6 : frontend Angular connecté à l'API Spring Boot
+  J34 (06/05) — Révision / consolidation S6
+  J35 (07/05) — [libre / avance]
+
+S7 — Intégration + sécurité (semaine 7)
+  J36 (08/05) — CORS entre Spring Boot et Angular
+  J37 (09/05) — Spring Security basics (authentification simple)
+  J38 (10/05) — JWT : génération et validation de tokens
+  J39 (11/05) — Sécurisation des endpoints avec JWT
+  J40 (12/05) — Mini-projet S7 : application full-stack sécurisée
+  J41 (13/05) — Révision / consolidation S7
+  J42 (14/05) — [libre / avance]
+
+S8 — Consolidation + projet final (semaine 8)
+  J43 (15/05) — Révision des points faibles identifiés
+  J44 (16/05) — Projet final : setup backend Spring Boot (API REST, JPA, sécurité)
+  J45 (17/05) — Projet final : frontend Angular (liste, formulaires, navigation)
+  J46 (18/05) — Projet final : connexion frontend ↔ backend
+  J47 (19/05) — Projet final : polish + tests manuels
+  J48 (20/05) — Préparation entretien : questions techniques Java/Spring/Angular
+  J49 (21/05) — Préparation entretien : simulation Q&A

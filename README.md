@@ -86,8 +86,17 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Compréhension du flux : `Controller → Service → Repository`
 - Hot reload activé via `spring-boot-devtools`
 
+#### J8 — 10/04/2026
+- Ajout des dépendances `spring-boot-starter-data-jpa` + `h2` dans `pom.xml`
+- Création de l'entité `Component` : `@Entity`, `@Id`, `@GeneratedValue`, getters/setters
+- Remplacement du `ComponentRepository` (classe) par une interface `JpaRepository<Component, Long>`
+- `findByName(String name)` déclaré dans l'interface → SQL généré automatiquement par Spring Data
+- Refactoring de `ComponentService` : `findAll`, `save`, `delete`, `findByName` via JPA
+- CRUD complet testé avec H2 en mémoire — données persistées pendant la session
+- Compréhension : `save()` = INSERT si pas d'id, UPDATE si id existant
+
 ---
 
 ### À venir
 
-- **J8** — Spring Boot S3 : JPA, `@Entity`, `@Repository` Spring Data, H2 en dev
+- **J9** — PostgreSQL en prod, `application.properties`, profils dev/prod

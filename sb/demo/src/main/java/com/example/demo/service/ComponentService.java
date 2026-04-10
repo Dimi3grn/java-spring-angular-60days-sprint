@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Component;
 import com.example.demo.repository.ComponentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,24 +12,29 @@ public class ComponentService {
     @Autowired
     private ComponentRepository componentRepository;
 
-    public List<String> getAll(){
-        return componentRepository.getAll();
+    public List<Component> getAll(){
+        return componentRepository.findAll();
     }
 
-    public String getByName(String name){
-        return componentRepository.getByName(name);
+    public Component getByName(String name){
+        return componentRepository.findByName(name);
     }
 
     public void add(String name){
-        componentRepository.add(name);
+        Component named = new Component();
+        named.setName(name);
+        componentRepository.save(named);
     }
 
+
     public void remove(String name){
-        componentRepository.remove(name);
+        componentRepository.delete(componentRepository.findByName(name));
     }
 
     public void rename(String original, String newValue){
-        componentRepository.rename(original, newValue);
+        Component c = componentRepository.findByName(original);
+        c.setName(newValue);
+        componentRepository.save(c);
     }
 
 }

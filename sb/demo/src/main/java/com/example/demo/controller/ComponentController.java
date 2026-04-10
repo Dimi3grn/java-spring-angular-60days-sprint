@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Component;
 import com.example.demo.service.ComponentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,12 +21,12 @@ public class ComponentController {
 
 
     @GetMapping
-    public List<String> getComponents() {
+    public List<Component> getComponents() {
         return componentService.getAll();
     }
 
     @GetMapping("/{name}")
-    public String getComponent(@PathVariable String name) {
+    public Component getComponent(@PathVariable String name) {
         return componentService.getByName(name);
     }
 
