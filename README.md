@@ -95,8 +95,18 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - CRUD complet testé avec H2 en mémoire — données persistées pendant la session
 - Compréhension : `save()` = INSERT si pas d'id, UPDATE si id existant
 
+#### J9 — 11/04/2026
+> Heures sup au taff, plus la force ni le temps. Journée skippée
+
+#### J10 — 12/04/2026
+- Connexion PostgreSQL : `application.properties`, datasource, dialect, `ddl-auto=update`
+- `Optional<T>` : pattern `findById` → `.isEmpty()` → `.get()` pour gérer les 404 proprement
+- Fix `deleteById(id)` vs `delete(entity)` — Spring Data JPA 4.x requiert `deleteById` pour les entités détachées
+- CRUD complet testé sur PostgreSQL persistant : GET, POST, PUT, DELETE
+- Compréhension des séquences PostgreSQL : le compteur d'id ne revient jamais en arrière
+
 ---
 
 ### À venir
 
-- **J9** — PostgreSQL en prod, `application.properties`, profils dev/prod
+- **J11** — Requêtes custom avec `@Query`

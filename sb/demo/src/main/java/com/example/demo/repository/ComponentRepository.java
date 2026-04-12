@@ -31,7 +31,7 @@ public interface ComponentRepository extends JpaRepository<Component, Long> {
 
     public void remove(String name){
         if (!components.contains(name)){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Component name NOT FOUDN");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Component name NOT FOUND");
         }
         components.remove(name);
     }

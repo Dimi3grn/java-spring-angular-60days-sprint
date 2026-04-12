@@ -25,9 +25,9 @@ public class ComponentController {
         return componentService.getAll();
     }
 
-    @GetMapping("/{name}")
-    public Component getComponent(@PathVariable String name) {
-        return componentService.getByName(name);
+    @GetMapping("/{id}")
+    public Component getComponent(@PathVariable Long id) {
+        return componentService.getById(id);
     }
 
     // J7 - EXERCICE 3 : POST /components → ajouter un composant
@@ -40,14 +40,14 @@ public class ComponentController {
         componentService.add(name);
     }
 
-    @DeleteMapping("/{name}")
-    public void removeComponent(@PathVariable String name){
-        componentService.remove(name);
+    @DeleteMapping("/{id}")
+    public void removeComponent(@PathVariable Long id){
+        componentService.remove(id);
     }
 
-    @PutMapping("/{name}")
-    public void renameComponent(@PathVariable String name, @RequestBody String newName){
-        componentService.rename(name, newName);
+    @PutMapping("/{id}")
+    public void renameComponent(@PathVariable Long id, @RequestBody String newName){
+        componentService.rename(id, newName);
     }
 
 }
