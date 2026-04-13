@@ -32,7 +32,7 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 
 ## Roadmap
 
-### S1 — Java Core
+### S1 — Java Core ✅
 
 #### J1 — 02/04/2026
 - Setup IntelliJ + configuration JDK 21
@@ -64,6 +64,8 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - `NotFoundException` découplée du domaine
 - Streams sur `GenericRegistry` via `getAll()` + `map` + `forEach`
 
+### S2 — Spring Boot basics ✅
+
 #### J6 — 08/04/2026
 > Journée chargée — boulot étudiant jusqu'à 1h du mat, session de code après. 4h du mat quand j'ai posé le clavier. Pas grand chose de fait, mais présent quand même.
 - Setup projet Spring Boot via start.spring.io, extraction dans `/sb/demo`
@@ -85,6 +87,8 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Extraction des données vers `ComponentRepository` (`@Repository`)
 - Compréhension du flux : `Controller → Service → Repository`
 - Hot reload activé via `spring-boot-devtools`
+
+### S3 — Spring Boot + base de données (en cours)
 
 #### J8 — 10/04/2026
 - Ajout des dépendances `spring-boot-starter-data-jpa` + `h2` dans `pom.xml`
