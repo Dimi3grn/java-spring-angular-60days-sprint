@@ -50,4 +50,14 @@ public class ComponentController {
         componentService.rename(id, newName);
     }
 
+    @GetMapping("/search")
+    public List<Component> searchComponent(@RequestParam("keyword") String keyword){
+        return componentService.search(keyword);
+    }
+
+    @GetMapping("/sorted")
+    public List<Component> sortComponents(){
+        return componentService.sort();
+    }
+
 }

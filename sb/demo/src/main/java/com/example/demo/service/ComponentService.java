@@ -59,4 +59,15 @@ public class ComponentService {
         componentRepository.save(variable.get());
     }
 
+    public List<Component> search(String keyword){
+        List<Component> response = componentRepository.searchByName(keyword);
+        if (response.isEmpty()){
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No component found");
+        }
+        return response;
+    }
+
+    public List<Component> sort(){
+        return componentRepository.findAllSortedByName();
+    }
 }

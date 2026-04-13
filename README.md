@@ -105,8 +105,18 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - CRUD complet testé sur PostgreSQL persistant : GET, POST, PUT, DELETE
 - Compréhension des séquences PostgreSQL : le compteur d'id ne revient jamais en arrière
 
+#### J11 — 13/04/2026
+- `@Query` : écriture de requêtes JPQL custom à la place des méthodes générées par Spring Data
+- JPQL vs SQL : JPQL parle des entités Java (`Component c`), SQL parle des tables
+- `LIKE` + `CONCAT('%', :keyword, '%')` pour la recherche partielle
+- `LOWER()` pour rendre la recherche insensible à la casse
+- `@Param("keyword")` pour lier un paramètre Java à un `:param` JPQL
+- `ORDER BY c.name` pour le tri alphabétique
+- `@RequestParam` pour les query string (`?keyword=xxx`) vs `@PathVariable` pour les segments de route (`/{id}`)
+- Deux nouvelles routes : `GET /components/search?keyword=xxx` et `GET /components/sorted`
+
 ---
 
 ### À venir
 
-- **J11** — Requêtes custom avec `@Query`
+- **J12** — Contraintes sur l'entité (`@Column`, `@NotNull` JPA)
