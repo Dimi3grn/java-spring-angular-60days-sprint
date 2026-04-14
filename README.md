@@ -119,8 +119,18 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - `@RequestParam` pour les query string (`?keyword=xxx`) vs `@PathVariable` pour les segments de route (`/{id}`)
 - Deux nouvelles routes : `GET /components/search?keyword=xxx` et `GET /components/sorted`
 
+#### J12 — 14/04/2026
+- Ajout de `spring-boot-starter-validation` dans `pom.xml`
+- `@NotNull` : bloque les valeurs null au niveau JPA
+- `@NotBlank` : bloque les strings vides et espaces (plus strict que `@NotNull`)
+- `@Column(nullable = false, length = 255)` : contrainte au niveau base de données
+- Compréhension : Hibernate intègre Bean Validation nativement — validation automatique au persist sans `@Valid`
+- Différence `@NotNull` vs `@NotBlank` : null vs vide/espaces
+- Consolidation S3 : vérification globale des connaissances — Controller→Service→Repository, Optional, @PathVariable vs @RequestParam, JPQL vs SQL natif, rôle de chaque couche
+
 ---
 
 ### À venir
 
-- **J12** — Contraintes sur l'entité (`@Column`, `@NotNull` JPA)
+- **J13** — Mini-projet S3 (révision / consolidation)
+- **J15** — `@Valid` + `@ControllerAdvice` : validation HTTP propre (400 au lieu de 500)

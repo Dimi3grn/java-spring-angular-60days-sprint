@@ -1,8 +1,11 @@
 package com.example.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Component {
@@ -11,6 +14,9 @@ public class Component {
     @GeneratedValue
     private Long id ;
 
+    @NotBlank
+    @NotNull
+    @Column(nullable = false, length = 255)
     private String name;
 
     public Component(){
