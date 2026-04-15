@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.ComponentRequest;
 import com.example.demo.model.Component;
 import com.example.demo.service.ComponentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,8 +38,8 @@ public class ComponentController {
     // Indice Spring : @PostMapping sur la méthode, @RequestBody sur le paramètre
 
     @PostMapping()
-    public void addComponent(@RequestBody String name) {
-        componentService.add(name);
+    public void addComponent(@RequestBody @Valid ComponentRequest request) {
+        componentService.add(request.getName());
     }
 
     @DeleteMapping("/{id}")

@@ -128,9 +128,17 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Différence `@NotNull` vs `@NotBlank` : null vs vide/espaces
 - Consolidation S3 : vérification globale des connaissances — Controller→Service→Repository, Optional, @PathVariable vs @RequestParam, JPQL vs SQL natif, rôle de chaque couche
 
+#### J13-J14 — 15/04/2026
+- DTO (`ComponentRequest`) : objet dédié au transport des données entrantes, séparé de l'entité JPA
+- `@Valid` sur le controller : validation déclenchée avant d'entrer dans le service
+- `@NotBlank` sur le DTO : bloque les strings vides et espaces côté HTTP
+- `@ControllerAdvice` + `@ExceptionHandler` : gestionnaire global d'exceptions pour tous les controllers
+- `@ResponseBody` + `@ResponseStatus(HttpStatus.BAD_REQUEST)` : retourne un JSON propre avec code 400
+- Stream + `Collectors.toMap()` pour transformer la liste de `FieldError` en `Map<String, String>`
+- Réponse d'erreur propre : `{"name":"must not be blank"}` au lieu de stacktrace 500
+
 ---
 
 ### À venir
 
-- **J13** — Mini-projet S3 (révision / consolidation)
-- **J15** — `@Valid` + `@ControllerAdvice` : validation HTTP propre (400 au lieu de 500)
+- **J16** — Profils Spring (dev/prod), variables d'environnement
