@@ -34,31 +34,31 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 
 ### S1 — Java Core ✅
 
-#### J1 — 02/04/2026
+#### J1 — 02/04/2026 — Setup + OOP
 - Setup IntelliJ + configuration JDK 21
 - Migration VS Code → IntelliJ
 - Révision des exercices S1 (héritage, interfaces, collections, exceptions, static/final/abstract)
 - Début mini-projet : `Component` (abstract) + `MechanicalComponent`
 
-#### J2 — 03/04/2026
+#### J2 — 03/04/2026 — Mini-projet S1 complet
 - `ElectricalComponent` (héritage, attribut spécifique)
 - `ComponentNotFoundException` (exception custom, RuntimeException)
 - `ComponentRegistry` (Map<String, Component>, CRUD complet)
 - `Main` (CLI avec Scanner, switch, try/catch)
 - Mini-projet S1 fonctionnel et compris de bout en bout
 
-#### J3 — 04/04/2026
+#### J3 — 04/04/2026 — Generics
 - Méthode générique `<T>` : `first(List<T> list)`
 - Classe générique `Pair<A, B>` avec attributs, constructeur, getters
 - Bounded generic `<T extends Component>` : `findHeaviest(List<T> list)`
 
-#### J4 — 05/04/2026
+#### J4 — 05/04/2026 — Lambdas + Streams
 - Lambdas : syntaxe `x -> operation`, passage en argument
 - Streams : `filter`, `map`, `forEach`, `sorted`, `reduce`, `toList()`
 - Method references : `Classe::méthode`
 - Exercices sur `List<Integer>`, `List<String>` et objets `MechanicalComponent`
 
-#### J5 — 07/04/2026
+#### J5 — 07/04/2026 — GenericRegistry + Nameable
 - Interface `Nameable` comme contrat générique
 - `GenericRegistry<T extends Nameable>` : registre générique réutilisable
 - `NotFoundException` découplée du domaine
@@ -66,7 +66,7 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 
 ### S2 — Spring Boot basics ✅
 
-#### J6 — 08/04/2026
+#### J6 — 08/04/2026 — Setup Spring Boot + premier endpoint REST
 > Journée chargée — boulot étudiant jusqu'à 1h du mat, session de code après. 4h du mat quand j'ai posé le clavier. Pas grand chose de fait, mais présent quand même.
 - Setup projet Spring Boot via start.spring.io, extraction dans `/sb/demo`
 - Lancement `./mvnw spring-boot:run` → Tomcat démarré sur port 8080
@@ -77,7 +77,7 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Deuxième endpoint `GET /components/{name}` avec `@PathVariable`
 - Constat : la liste est hardcodée, les deux méthodes ne la partagent pas → à résoudre J7
 
-#### J7 — 08/04/2026
+#### J7 — 08/04/2026 — CRUD en mémoire + architecture en couches
 - CRUD complet en mémoire : `GET`, `POST`, `PUT`, `DELETE` sur `/components`
 - Liste partagée entre méthodes via attribut de classe (`ArrayList`)
 - Gestion 404 avec `ResponseStatusException` + `HttpStatus.NOT_FOUND`
@@ -90,7 +90,7 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 
 ### S3 — Spring Boot + base de données (en cours)
 
-#### J8 — 10/04/2026
+#### J8 — 10/04/2026 — JPA + H2
 - Ajout des dépendances `spring-boot-starter-data-jpa` + `h2` dans `pom.xml`
 - Création de l'entité `Component` : `@Entity`, `@Id`, `@GeneratedValue`, getters/setters
 - Remplacement du `ComponentRepository` (classe) par une interface `JpaRepository<Component, Long>`
@@ -99,17 +99,17 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - CRUD complet testé avec H2 en mémoire — données persistées pendant la session
 - Compréhension : `save()` = INSERT si pas d'id, UPDATE si id existant
 
-#### J9 — 11/04/2026
+#### J9 — 11/04/2026 — Journée skippée
 > Heures sup au taff, plus la force ni le temps. Journée skippée
 
-#### J10 — 12/04/2026
+#### J10 — 12/04/2026 — PostgreSQL + Optional
 - Connexion PostgreSQL : `application.properties`, datasource, dialect, `ddl-auto=update`
 - `Optional<T>` : pattern `findById` → `.isEmpty()` → `.get()` pour gérer les 404 proprement
 - Fix `deleteById(id)` vs `delete(entity)` — Spring Data JPA 4.x requiert `deleteById` pour les entités détachées
 - CRUD complet testé sur PostgreSQL persistant : GET, POST, PUT, DELETE
 - Compréhension des séquences PostgreSQL : le compteur d'id ne revient jamais en arrière
 
-#### J11 — 13/04/2026
+#### J11 — 13/04/2026 — @Query JPQL custom
 - `@Query` : écriture de requêtes JPQL custom à la place des méthodes générées par Spring Data
 - JPQL vs SQL : JPQL parle des entités Java (`Component c`), SQL parle des tables
 - `LIKE` + `CONCAT('%', :keyword, '%')` pour la recherche partielle
@@ -119,7 +119,7 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - `@RequestParam` pour les query string (`?keyword=xxx`) vs `@PathVariable` pour les segments de route (`/{id}`)
 - Deux nouvelles routes : `GET /components/search?keyword=xxx` et `GET /components/sorted`
 
-#### J12 — 14/04/2026
+#### J12 — 14/04/2026 — Contraintes entité + consolidation S3
 - Ajout de `spring-boot-starter-validation` dans `pom.xml`
 - `@NotNull` : bloque les valeurs null au niveau JPA
 - `@NotBlank` : bloque les strings vides et espaces (plus strict que `@NotNull`)
@@ -128,7 +128,7 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Différence `@NotNull` vs `@NotBlank` : null vs vide/espaces
 - Consolidation S3 : vérification globale des connaissances — Controller→Service→Repository, Optional, @PathVariable vs @RequestParam, JPQL vs SQL natif, rôle de chaque couche
 
-#### J13-J14 — 15/04/2026
+#### J13-J14 — 15/04/2026 — DTO + @Valid + @ControllerAdvice
 - DTO (`ComponentRequest`) : objet dédié au transport des données entrantes, séparé de l'entité JPA
 - `@Valid` sur le controller : validation déclenchée avant d'entrer dans le service
 - `@NotBlank` sur le DTO : bloque les strings vides et espaces côté HTTP
