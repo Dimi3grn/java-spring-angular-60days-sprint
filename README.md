@@ -137,8 +137,16 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Stream + `Collectors.toMap()` pour transformer la liste de `FieldError` en `Map<String, String>`
 - Réponse d'erreur propre : `{"name":"must not be blank"}` au lieu de stacktrace 500
 
+#### J16 — 17/04/2026 — Profils Spring dev/prod
+
+- `application.properties` → config commune + `spring.profiles.active=dev|prod`
+- `application-dev.properties` → H2 en mémoire (`jdbc:h2:mem:testdb`, `ddl-auto=create-drop`)
+- `application-prod.properties` → PostgreSQL (datasource, dialect, `ddl-auto=update`)
+- Spring charge automatiquement le fichier correspondant au profil actif
+- Profil dev : base vide à chaque démarrage — profil prod : données persistées
+
 ---
 
 ### À venir
 
-- **J16** — Profils Spring (dev/prod), variables d'environnement
+- **J17** — Mini-projet S4 ou début TypeScript/Angular
