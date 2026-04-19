@@ -145,8 +145,19 @@ Cet apprentissage est guidé par un **agent IA agissant comme mentor technique**
 - Spring charge automatiquement le fichier correspondant au profil actif
 - Profil dev : base vide à chaque démarrage — profil prod : données persistées
 
+#### J17-J18 — 19/04/2026 — Mini-projet S4 : API Pilote de zéro
+
+- Création d'une deuxième ressource `Pilote` (nom, matricule) de bout en bout sans aide
+- `Pilote.java` : `@Entity`, `@Id`, `@GeneratedValue`, constructeur vide, getters/setters
+- `PiloteRepository` : `JpaRepository<Pilote, Long>` + `findByMatricule` généré automatiquement
+- `PiloteService` : `getAll`, `getById`, `add`, `remove` avec `Optional` + 404 propres
+- `PiloteRequest` (DTO) : `@NotBlank` sur `nom` et `matricule`
+- `PiloteController` : CRUD complet avec `@Valid`, routes GET/POST/DELETE
+- `GlobalExceptionHandler` existant réutilisé sans modification
+- CRUD testé et fonctionnel sur H2 (profil dev)
+
 ---
 
 ### À venir
 
-- **J17** — Mini-projet S4 ou début TypeScript/Angular
+- **J19** — TypeScript : types, interfaces, classes (analogies Java)
